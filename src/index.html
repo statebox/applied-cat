@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ACT</title>
+
+    <link rel="stylesheet" href="../vendor/Barebones-master/css/normalize.css">
+    <link rel="stylesheet" href="../vendor/Barebones-master/css/barebones.css">
+
+    <style>
+        #app {
+            height: 100%;
+            width: 100%;
+            /* 
+            margin: 0;
+            padding: 0; */
+            display: flex;
+            flex-direction: column;
+        }
+        #main {
+            flex: 1;
+            display: flex;
+            padding: 1em;
+        }
+        #layout {
+            display: flex;
+            flex: 1;
+        }
+        #sidenav {
+            border-right: 1px solid gray;
+            padding: .5em;
+            padding-top: 1.2em;
+        }
+        #header {
+            background: rgb(225, 212, 71);
+            height: 32px;
+            display: flex;
+            /* padding-top: 6px;
+            padding-left: 6px; */
+            border-bottom: 1px solid burlywood;
+        }
+        
+        #sidenav .sidenav-item {
+            padding: .3rem;
+            margin: .4rem;
+            /* background: blanchedalmond; */
+            /* border: 1px solid burlywood; */
+        }
+        #sidenav .sidenav-item a {
+            text-decoration: none;
+            color: darkslategrey;
+        }
+        .sidenav-spacer {
+            padding-bottom: 1em;
+            margin-top: 1em;
+        }
+        .Aligner {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Aligner-item {
+            max-width: 50%;
+        }
+
+        #auth-header {
+            padding: 0 1em 0 .3em;
+            padding: 3px;
+            background-color: yellowgreen;
+        }
+        #auth-header code {
+            font-family: serif;
+            padding: 0;
+            margin: 0;
+            background: none !important;
+            border: none !important;
+        }
+        #auth-header a {
+            color: black;
+            font-size: 100% !important;
+            text-decoration: none;
+            /* border: 1px solid gray; */
+            padding: 3px 7px;
+            /* background: rgba(250,250,250,0.5); */
+        }
+        #statebox-logo a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="./start.js"></script>
+</body>
+</html>
