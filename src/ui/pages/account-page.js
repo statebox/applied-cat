@@ -64,15 +64,17 @@ export default function AccountPage () {
                 <td>Verified</td>
                 <td>{user.emailVerified ? <b>verified</b> : <i>not verified</i>}</td>
               </tr>
-              <tr>
-                <td>Affliation</td>
-                <td>TODO</td>
-              </tr>
               </tbody>
             </table>
           </div>
       
           <h4>Location</h4>
+          <div>
+            <tr>
+              <td></td>
+              <td>TODO</td>
+            </tr>  
+          </div>
 
           <h4>Signout</h4>
           <p>

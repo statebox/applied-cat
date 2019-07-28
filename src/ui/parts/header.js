@@ -1,6 +1,4 @@
-import * as R from 'ramda'
-import React from "react";
-import { Link } from 'react-router-dom'
+import React from "react"
 
 import useAuth from '../use-auth.js'
 
@@ -24,9 +22,9 @@ export default function Header() {
       <div id="auth-header">
         {showDisplayName}
       </div>
-      <div id="auth-header" style={{backgroundColor: 'orange', fontFamily: 'Fira code'}}>
+      {/* <div id="auth-header" style={{backgroundColor: 'orange', fontFamily: 'Fira code'}}>
         <BrowseLink></BrowseLink>
-      </div>
+      </div> */}
     </div>
   )
 }
