@@ -11,20 +11,12 @@ export default function Header() {
       <>
         <AccountLink><code>{authState.user.displayName}</code></AccountLink>
       </>
-    
-
-  if(!authState.user) {
-    return null
-  }
 
   return (
-    <div id="header">
+    <div id="header" style={{display:'flex'}}>
       <div id="auth-header">
-        {showDisplayName}
+        {authState.user ? showDisplayName : null}
       </div>
-      {/* <div id="auth-header" style={{backgroundColor: 'orange', fontFamily: 'Fira code'}}>
-        <BrowseLink></BrowseLink>
-      </div> */}
     </div>
   )
 }

@@ -22,7 +22,13 @@ function navElements (authState) {
   }
 
   // else, not logged in
-  return []
+  return [
+      <Link to="/">Home</Link>,
+      <Link to="/about">About</Link>,
+      <Link to="/events">Events</Link>,
+      <Link to="/publications">Publications</Link>,
+      <Link to="/lectures">Lectures</Link>
+  ]
 }
 
 export default function Sidenav() {
