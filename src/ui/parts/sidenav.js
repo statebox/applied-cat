@@ -12,22 +12,23 @@ function navElements (authState) {
   // logged in
   if (authState.user) {
     return [
-      <Link to="/">Home</Link>,
-      <Link to="/about">About</Link>,
       <AccountLink/>,
-      <Link to="/events">Events</Link>,
+      <Link to="/search">Search</Link>,
       <Link to="/publications">Publications</Link>,
-      <Link to="/lectures">Lectures</Link>
+      // <Link to="/lectures">Lectures</Link>
+      // <Link to="/events">Events</Link>,
+      <Link to="/about">About</Link>,
     ]
   }
 
   // else, not logged in
   return [
-      <Link to="/">Home</Link>,
-      <Link to="/about">About</Link>,
-      <Link to="/events">Events</Link>,
+      <Link to="/">Sign in</Link>,
+      <Link to="/search">Search</Link>,
       <Link to="/publications">Publications</Link>,
-      <Link to="/lectures">Lectures</Link>
+      // <Link to="/lectures">Lectures</Link>
+      // <Link to="/events">Events</Link>,
+      <Link to="/about">About</Link>,
   ]
 }
 

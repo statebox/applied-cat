@@ -15,9 +15,9 @@
   "license": "AGPL-3.0-only",
   "dependencies": {
     "bibtex-parse-js": "0.0.24",
-    "elasticlunr": "^0.9.5",
     "final-form": "^4.18.2",
     "firebase": "^6.3.1",
+    "lunr": "^2.3.6",
     "ramda": "^0.26.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

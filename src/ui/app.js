@@ -30,9 +30,9 @@ import LectureDetailsPage from './pages/lecture-details-page.js'
 let placeHolder = (s) => () => (<div>{s}</div>)
 let DashboardPage = placeHolder("dashboard")
 
-
 import About from './pages/about-page.js'
 
+import Lunr from 'lunr'
 
 function MainPage() {
   let authState = useAuth();
@@ -57,6 +57,7 @@ function App() {
   let [events, setEvents] = useState([]);
   let [publications, setPublications] = useState([]);
   let [lectures, setLectures] = useState([]);
+  let [lunr, setLunr] = useState(false)
 
   useEffect(() => {
     let fb = firebaseInit()
@@ -87,6 +88,20 @@ function App() {
       })
       console.log('PUBLICATIONS', es)
       setPublications(es)
+      let idx = Lunr(function () {
+        this.ref('id')
+        this.field('bibtex')
+      
+        es.forEach(d => {
+          console.log(d)
+          this.add({
+            id: d.id,
+            bibtex: d.bibtex
+          })
+        }, this)
+      })
+
+      setLunr(idx)
     })
   }, []);
 
@@ -120,7 +135,7 @@ function App() {
             <Route exact path="/account/signup" component={SignupPage} />
             
             <Route path="/search" render={
-                (props) => <SearchPage {...props} events={events} lectures={lectures} publications={publications}/>
+                (props) => <SearchPage {...props} lunr={lunr} events={events} lectures={lectures} publications={publications}/>
             }/>
             
             <Route path="/events" render={

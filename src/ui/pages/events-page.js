@@ -11,7 +11,7 @@ export default function EventsPage({events}) {
   )
 
   return (
-      <div>
+      <div className="mainPadding">
         <h2>Events</h2>
         <p>
           <ol>

@@ -21,9 +21,7 @@ export default function Citation({ citation }) {
                 <Prop name='DOI' val={citation.doi} />
                 <Prop name='URL' val={citation.url} />
                 <Prop name='Citation Key' val={citation.citeKey} />
-            </p>
-            <p>
-                <br/><i>Additional Tags:</i><br/><br/>
+                <br></br>
                 {R.map(mkProp, keys)}
             </p>
         </div>

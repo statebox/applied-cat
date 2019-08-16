@@ -73,7 +73,8 @@ export default function AddPublicationPage({ publications }) {
     <>
       <p>
         <b>How to add a citation?</b> We suggest that you paste a DOI, Arxiv URL, or similar and into <a href="zbib.org">zbib.org</a>.
-        Then you go to "Export" and select download BiBTeX. Then open the file and copy it's contents and paste below.
+        Then you go to "Export" and select download BiBTeX. Then open the file and copy it's contents and paste below.<br></br>
+        aAlternatively, you can create a BiBTeX file manually, <a href="https://truben.no/latex/bibtex/">here</a>.
       </p>
       <p>Paste valid BiBTeX here:</p>
       <div style={{ display: "flex", flex: 1 }}>
@@ -135,7 +136,7 @@ export default function AddPublicationPage({ publications }) {
   };
 
   return (
-    <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+    <div  className="mainPadding" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
       <h2>Submit Publication</h2>
       {switchView()}
     </div>

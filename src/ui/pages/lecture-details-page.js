@@ -6,16 +6,18 @@ import Prop from '../parts/prop.js'
 
 function YoutubeEmbed({url}) {
   let youtubeId = 'MmjBUwnZQZU'
-  let w = 1280
-  let h = 768
+  let s = 2
+  let w = (1280/s)
+  let h = (768/s)
   let src = `https://www.youtube-nocookie.com/embed/${youtubeId}`
   return (
-    <iframe width={w} height={h} src={src} frameBorder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen></iframe>
+    <div className='youtube-embed embed'>
+      <iframe width={w} height={h} src={src} frameBorder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen></iframe>
+    </div>
   )
 }
-
 
 export default function LecturesPage({lectures, match}) {
 
@@ -24,7 +26,7 @@ export default function LecturesPage({lectures, match}) {
     R.head(R.filter(R.propEq("id", lectureId), lectures)) || {};
 
   return (
-      <div>
+      <div className="mainPadding">
         <h4>Lecture: <i>{lecture.title}</i></h4>
         <Prop name="Link" val={lecture.url}></Prop>
         <YoutubeEmbed url={lecture.url}></YoutubeEmbed>

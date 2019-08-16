@@ -11,7 +11,7 @@ export default function LecturesPage({lectures}) {
   )
 
   return (
-      <div>
+      <div className="mainPadding">
         <h2>Lectures</h2>
         <p>
           <ol>

@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 export default function PublicationsPage({ publications }) {
   let mkEventLink = (s, i) => (
     <li key={i}>
-      <code>{s.id}</code> <Link to={`/publication/${s.citeKey}`}>{s.parsed.title}</Link>{" "}
-      {s.author} &nbsp;
+      <code>{s.id}</code>{" "}
+      <Link to={`/publication/${s.id}`}>{s.parsed.title}</Link>{" "}
+      {s.parsed.author}
     </li>
   );
 
   return (
-    <div>
+    <div className="mainPadding">
       <h2>Publications</h2>
       <Link to="/publications/add">
         <button>Add Publication</button>
