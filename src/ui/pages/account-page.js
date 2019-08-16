@@ -29,7 +29,7 @@ export default function AccountPage () {
 
   if (user) {
     return (
-      <div>
+      <div className="mainPadding">
           <h2>Profile</h2>
           <p>
             Your profile information

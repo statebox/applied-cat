@@ -2,6 +2,8 @@ import * as R from "ramda";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import useAuth from '../use-auth.js'
+
 import Citation from "../parts/bibtex-citation.js";
 
 import firebaseInit from "../../firebaseInit.js";
@@ -31,6 +33,9 @@ console.log(exampleCitation);
 import parseBibtex from "../../lib/parse-bibtex.js";
 
 export default function AddPublicationPage({ publications }) {
+
+  let authState = useAuth()
+  
   // form mode: 'ready' -> 'submitting' -> 'ok' | 'error'
   let [state, setState] = useState("ready");
   let [citation, setCitation] = useState({
@@ -52,13 +57,20 @@ export default function AddPublicationPage({ publications }) {
       return;
     }
 
+    let replaceUndefined = (x) => R.pipe(
+      R.toPairs,
+      R.map(([k,v]) => [k, v ? v : false]),
+      R.fromPairs
+    )(x)
+
+    citation.user = 
     setState("submitting");
     console.log("submit", citation.bibtex, citation.parsed);
     firebaseInit()
       .firestore()
       .collection("publications")
       .doc(citation.parsed.citeKey)
-      .set(citation)
+      .set(replaceUndefined(citation))
       .then(() => {
         setState("ok");
       })
@@ -135,10 +147,15 @@ export default function AddPublicationPage({ publications }) {
     }
   };
 
-  return (
-    <div  className="mainPadding" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+
+  let isLoggedIn = () => <>
       <h2>Submit Publication</h2>
       {switchView()}
+    </>
+
+return (
+    <div  className="mainPadding" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+      { authState.user ? isLoggedIn() : 'Please sign in to add a publication.' }
     </div>
   );
 }

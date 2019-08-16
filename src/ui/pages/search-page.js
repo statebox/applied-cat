@@ -15,11 +15,7 @@ export default function SearchPage({ publications, events, lectures, lunr, match
     function handleTyping(event) {
         let q = event.target.value
         let autoStar = R.join(' ', R.map(s => `${s}*`, R.split(' ', q)))
-        if(R.test(/^\%/, q)) {
-            setQuery(q)
-        } else {
-            setQuery(autoStar)
-        }
+        setQuery(autoStar)
         handleSubmit()
     }
 
@@ -31,7 +27,9 @@ export default function SearchPage({ publications, events, lectures, lunr, match
             let r = R.map(d => findPub(d.ref), results)
             setResults(r)
         }
-        event.preventDefault();
+        if (event){ // we call it from handle typing
+            event.preventDefault();
+        }
     }
 
     let mkRow = publication => <tr>
