@@ -12,9 +12,8 @@ export default function Landing() {
     <WhiteBackground>
     <Center>
       <h1>
-        Welcome to <code>applied.cat</code>
+        Welcome to <code>applied.cat</code> 😸 
       </h1>
-      <h1> 😸 <LoginLink /></h1>
     </Center>
     </WhiteBackground>
   );

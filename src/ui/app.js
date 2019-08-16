@@ -36,7 +36,7 @@ import Lunr from 'lunr'
 
 function MainPage() {
   let authState = useAuth();
-  return !authState.user ? <LandingPage /> : <DashboardPage />;
+  return !authState.user ? <LandingPage /> : <LandingPage />;
 }
 
 

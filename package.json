@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel serve src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html && cp _redirects dist/"
   },
   "browserslist": [
     "last 2 Chrome versions"
