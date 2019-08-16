@@ -20,7 +20,7 @@ export default function PublicationDetailPage({ publications, match }) {
 
   return (
     <div>
-      <Citation input={publication.input} />
+      <Citation citation={publication.parsed} />
     </div>
   );
 }

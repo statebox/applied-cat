@@ -64,7 +64,7 @@ function App() {
     document.firebase = fb;
 
     let db = fb.firestore()
-    db.collection('events').get().then(snapshot => {
+    db.collection('events').onSnapshot(snapshot => {
       let es = []
       snapshot.forEach(doc => {
         es.push(R.assoc('id', doc.id, doc.data()))
@@ -80,7 +80,7 @@ function App() {
     document.firebase = fb;
 
     let db = fb.firestore()
-    db.collection('publications').get().then(snapshot => {
+    db.collection('publications').onSnapshot(snapshot => {
       let es = []
       snapshot.forEach(doc => {
         es.push(R.assoc('id', doc.id, doc.data()))
